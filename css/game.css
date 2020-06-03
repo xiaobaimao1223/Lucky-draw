@@ -1,0 +1,584 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+body {
+    font-family: Open Sans;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/Lovepik_com-400109889-flamingo-illustrations.jpg");
+    background-size: cover;
+}
+
+h2 {
+    color: white;
+    margin: 20px;
+    text-align: center;
+    font-size: 28px;
+}
+
+
+/* .container {
+  margin: 20px auto;
+  display: block;
+} */
+
+.controlBox {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #151719;
+    left: -300px;
+    z-index: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#controlBox.active {
+    left: 0px;
+    z-index: 99;
+}
+
+.controlBox ul li {
+    color: white;
+    list-style: none;
+    padding: 20px 15px;
+    /* border-bottom: 1px solid white; */
+    text-align: center;
+}
+
+
+/* .controlBox {
+	display: block;
+	float:left;
+    margin: 50px auto;
+    width: 30%;
+    border: 2px solid white;
+    text-align: center;
+} */
+
+.mainbox {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    float: right;
+    text-align: center;
+    z-index: 1;
+    bottom: auto;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    /* top: 5%; */
+}
+
+.marker {
+    position: relative;
+    width: 18%;
+    text-align: center;
+    bottom: -30px;
+    z-index: 3;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    border: 10px solid #ff8a8a;
+    overflow: hidden;
+    top: -30px;
+    z-index: 1;
+    /* transition: all ease 5s;
+    -webkit-transition: all ease 5s;
+    -moz-transition: all ease 5s;
+    -ms-transition: all ease 5s;
+    -o-transition: all ease 5s; */
+}
+
+.mainbox span {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+}
+
+.span1 {
+    -webkit-clip-path: polygon(0 92%, 100% 50%, 0 8%);
+    clip-path: polygon(0 92%, 100% 50%, 0 8%);
+    background-color: #fde2b2;
+    top: 145px;
+    left: 0;
+    z-index: 1;
+}
+
+.span2 {
+    -webkit-clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+    clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+    background-color: #d7f7d2;
+    top: 145px;
+    right: 0;
+    z-index: 1;
+}
+
+.span3 {
+    -webkit-clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+    clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+    background-color: #f9f0e9;
+    bottom: 0;
+    left: 145px;
+    z-index: 1;
+    -webkit-clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+}
+
+.span4 {
+    -webkit-clip-path: polygon(50% 100%, 92% 0%, 8% 0);
+    clip-path: polygon(50% 100%, 92% 0%, 8% 0);
+    background-color: #fae3dd;
+    top: 0;
+    left: 145px;
+    z-index: 1;
+}
+
+.box2 {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-135deg);
+    z-index: 1;
+}
+
+.box1 .span1 b {
+    font-size: 30px;
+    background-color: #fde2b2;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 35%;
+    left: 3%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #d26048;
+}
+
+.box1 .span2 b {
+    font-size: 30px;
+    background-color: #d7f7d2;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 35%;
+    left: 30%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #d26048;
+}
+
+.box1 .span3 b {
+    font-size: 30px;
+    background-color: #f9f0e9;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 48%;
+    left: 15%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transform: rotate(-90deg);
+    color: #d26048;
+}
+
+.box1 .span4 b {
+    font-size: 30px;
+    background-color: #fae3dd;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 20%;
+    left: 18%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transform: rotate(-90deg);
+    color: #d26048;
+}
+
+.box2 .span4 b {
+    font-size: 30px;
+    background-color: #fae3dd;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 20%;
+    left: 18%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transform: rotate(-90deg);
+    color: #d26048;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.box2 .span3 b {
+    font-size: 30px;
+    background-color: #f9f0e9;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 48%;
+    left: 15%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #d26048;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.box2 .span2 b {
+    font-size: 30px;
+    background-color: #d7f7d2;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 35%;
+    left: 30%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #d26048;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+
+.box2 .span1 b {
+    font-size: 30px;
+    background-color: #fde2b2;
+    position: absolute;
+    z-index: 1;
+    /* text-align: center; */
+    top: 35%;
+    left: 3%;
+    width: 200px;
+    height: 95px;
+    line-height: 35px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #d26048;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+
+.mainbox .spin {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    background-color: #ff8a8a;
+    ;
+    color: #fff;
+    /* box-shadow: 0 5px 20px white; */
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.mainbox .spin:active {
+    width: 135px;
+    height: 135px;
+    font-size: 20px;
+}
+
+.mainbox.animate:after {
+    animation: animateArrow 0.7s ease infinite;
+    -webkit-animation: animateArrow 0.7s ease infinite;
+}
+
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    text-align: center;
+    z-index: 0;
+}
+
+.myText {
+    margin: 10px;
+    text-align: center;
+    height: 35px;
+    font-size: 16pt;
+    width: 200px;
+}
+
+#btn2 {
+    border-radius: 50px;
+    width: 70%;
+    height: 30px;
+    background-color: #ff8a8a;
+    border-color: #ff8a8a;
+    font-size: 15pt;
+    margin: 20px 10px;
+}
+
+.toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #ff8a8a;
+    margin: 5px 0px;
+}
+
+.toggle-btn {
+    position: absolute;
+    left: 100px;
+    top: 20px;
+}
+
+.toggle-btn .popuptext {
+    display: none;
+    width: 200px;
+    height: 35px;
+    background-color: #ff8a8a;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.toggle-btn .popuptext::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #ff8a8a;
+    position: absolute;
+    left: 80px;
+    top: -10px;
+}
+
+#myPopup .submitBtn {
+    font-size: 14px;
+    background-color: #f9f0e9;
+    color: #ff8a8a;
+    border: 1px solid #ff8a8a;
+    border-radius: 4px;
+}
+
+#userPassword {
+    border: 1px solid #ff8a8a;
+    color: #ff8a8a;
+    background-color: #f9f0e9;
+    border-radius: 4px;
+}
+
+
+/* 用图片当中奖页面 */
+
+.popBoxBg {
+    width: 800px;
+    height: 800px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px whitesmoke;
+    border-radius: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    position: absolute;
+}
+
+#succBox {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    background: #f1f1f1;
+    border-radius: 8px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    background-image: url("../images/Popup.png");
+    background-size: 400px, 400px;
+    background-repeat: no-repeat;
+}
+
+.close {
+    font-size: 30px;
+    color: #d5849f;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}
+
+.result {
+    font-size: 50px;
+    font-weight: 700;
+    color: #d5849f;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+}
+
+
+/* 用图片当未中奖页面 */
+
+#loseBox {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    background: #f1f1f1;
+    border-radius: 8px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    background-image: url("../images/fail.png");
+    background-size: 400px, 400px;
+    background-repeat: no-repeat;
+}
+
+.container #losePop h1 {
+    color: black;
+}
+
+#closebtn {
+    color: white;
+    position: absolute;
+    top: 3px;
+    left: 260px;
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+
+/* footer */
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 13px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+}
+
+a:link {
+    color: white;
+}
+
+
+/* 未访问链接*/
+
+a:visited {
+    color: wheat;
+}
+
+
+/* 已访问链接 */
+
+a:hover {
+    color: purple;
+}
+
+
+/* 鼠标移动到链接上 */
+
+a:active {
+    color: red;
+}
+
+#logo {
+    position: absolute;
+    right: 5%;
+    margin-top: 10px;
+    float: right;
+    transition: width height 2s;
+    -moz-transition: width height 2s;
+    /* Firefox 4 */
+    -webkit-transition: width height 2s;
+    /* Safari and Chrome */
+    -o-transition: width height 2s;
+}
+
+#logo:hover {
+    width: 200px;
+    height: 200px;
+}

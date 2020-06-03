@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lucky game</title>
+    <link rel="stylesheet" href="css/game.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body id="shadow">
+    <audio src="sound/game music.mp3" id="bgm" loop="loop"></audio>
+    <audio src="sound/lose.mp3" id="lose"></audio>
+    <audio src="sound/success.mp3" id="success"></audio>
+
+    <div class="container">
+
+        <!-- The siderbar of changing the price -->
+        <div class="controlBox" id="controlBox">
+            <button id="closebtn" onclick="closeSiderbar()">
+          ×
+        </button>
+            <ul>
+                <h2 style="font-size: 25px;">Change Your Awards Here</h2>
+                <h3 style="text-align: center; color: white;">Lucky Awards:</h3>
+                <li>
+                    <input type="text" class="myText" id="price2" />
+                </li>
+                <li>
+                    <input type="text" class="myText" id="price4" />
+                </li>
+                <li>
+                    <input type="text" class="myText" id="price6" />
+                </li>
+                <li>
+                    <input type="text" class="myText" id="price8" />
+                </li>
+
+                <h3 style="text-align: center; color: white;">No Awards:</h3>
+                <li>
+                    <input type="text" class="myText" id="price1" />
+                </li>
+                <li>
+                    <input type="text" class="myText" id="price3" />
+                </li>
+                <li>
+                    <input type="text" class="myText" id="price5" />
+                </li>
+                <li>
+                    <input type="text" class="myText" id="price7" />
+                </li>
+                <li>
+                    <button id="btn2" onclick="updatePrice()">Update</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Price Changing Sidebar -->
+        <div class="toggle-btn" id="toggle-btn">
+            <div id="toggle-btn1" onclick="popupPass()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <span class="popuptext" id="myPopup">
+              <input id="userPassword" type="password" maxlength="6" minlength="4">
+              <button onclick="showSiderbar()" class="submitBtn">submit</button>
+            </span>
+        </div>
+
+        <!-- wheel -->
+        <div id="mainbox" class="mainbox">
+            <img class="marker" src="images/marker.png" />
+
+            <div id="box" class="box">
+                <div class="box1">
+                    <span class="span1" id="span1"><b id="span1_one"></b></span>
+                    <span class="span2" id="span2"><b id="span1_two"></b></span>
+                    <span class="span3" id="span3"><b id="span1_three"></b></span>
+                    <span class="span4" id="span4"><b id="span1_four"></b></span>
+                </div>
+                <div class="box2">
+                    <span class="span1" id="span5"><b id="span2_one"></b></span>
+                    <span class="span2" id="span6"><b id="span2_two"></b></span>
+                    <span class="span3" id="span7"><b id="span2_three"></b></span>
+                    <span class="span4" id="span8"><b id="span2_four"></b></span>
+                </div>
+            </div>
+            <button class="spin" onclick="myfunction()">PRESS</button>
+            <canvas id="canvas"></canvas>
+
+            <!-- 中奖页面 -->
+            <div id="succPopBox" class="popBoxBg">
+                <div id="succBox">
+                    <div class="result" id="result"></div>
+                    <button onclick="popClose()" class="close">X</button>
+                </div>
+            </div>
+
+            <!-- 未中奖页面 -->
+            <div id="failPop" class="popBoxBg">
+                <div id="loseBox">
+                    <button onclick="losePopClose()" class="close">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="images/FlamingoPink..png" id="logo" width="120px" height="120px">
+
+    <!-- footer -->
+    <footer>
+        <p style="color: white;">Copyright &copy; 2020 - <a href="https://www.iabrahampos.com/">Iabrahampos  </p>
+    </footer>
+
+    <script type="text/javascript" src="js/game.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.2.0/dist/confetti.browser.min.js"></script>
+    <script>
+            // if (window.Event)
+            //     document.captureEvents(Event.MOUSEUP);
+
+            // function nocontextmenu() {
+            //     event.cancelBubble = true
+            //     event.returnValue = false;
+            //     return false;
+            // }
+            // function norightclick(e) {
+            //     if (window.Event) {
+            //         if (e.which == 2 || e.which == 3)
+            //             return false;
+            //     }
+            //     else
+            //         if (event.button == 2 || event.button == 3) {
+            //             event.cancelBubble = true
+            //             event.returnValue = false;
+            //             return false;
+            //         }
+            // }
+            // document.oncontextmenu = nocontextmenu; // for IE5+
+            // document.onmousedown = norightclick; // for all others
+    </script>
+</body>
+
+</html>
